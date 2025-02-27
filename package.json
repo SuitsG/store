@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "name": "tiendavirtual",
+  "version": "1.0.0",
+  "description": "La estructura de un proyecto MVC generalmente se organiza de la siguiente manera:",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
