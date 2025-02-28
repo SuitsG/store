@@ -36,7 +36,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
- 
 }
 
 .title {
@@ -45,6 +44,7 @@ body {
   font-weight: bold;
   font-size: 2.5rem;
 }
+
 /************ Nav ************/
 .nav {
   display: flex;
@@ -304,16 +304,18 @@ nav a {
 }
 
 
-/********* For Tablets********/
+/************ For Tablets ***********/
 @media only screen and (min-width:768px) and (max-width:991px){
-.menu-toggle{
-  display: none;
+
+  /****** Header ******/
+  .icons{
+    display: none;
+  }
+
+  /****** Main *******/
+  /****** Footer ****/
 }
 
-.search-icon{
-  display: none;
-}
-}
 
 
 
@@ -321,28 +323,24 @@ nav a {
 
 /********* For Labtops********/
 @media only screen and (min-width:992px) and (max-width:1199px){
-
-  .menu-toggle {
-    display: none;
-  }
- 
-  .search-icon{
+  /****** Header ******/
+  .icons{
     display: none;
   }
 
+  /****** Main *******/
+  /****** Footer ****/
 }
 
 
 
 /********* For Destops********/
 @media only screen and (min-width:1200px){
-  .menu-toggle {
+  /****** Header ******/
+  .icons{
     display: none;
   }
 
-
-  .search-icon{
-    display: none;
-  }
-
+  /****** Main *******/
+  /****** Footer ****/
 }
