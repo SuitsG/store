@@ -1,20 +1,27 @@
 {
-  "dependencies": {
-    "express": "^4.21.2"
-  },
   "name": "tiendavirtual",
   "version": "1.0.0",
   "description": "La estructura de un proyecto MVC generalmente se organiza de la siguiente manera:",
   "main": "app.js",
+  "type": "module",
   "directories": {
     "test": "tests"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "mocha": "^11.1.0",
+    "sinon": "^14.0.0"
+  }
 }

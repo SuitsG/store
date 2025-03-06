@@ -3,7 +3,7 @@ const Product = require('../models/product');
 // Get all products
 exports.getProducts = async (req, res) => {
   try {
-    const products = await Product.find();
+    const products = await Product.findAll();
     res.status(200).json(products);
   } catch (error) {
     res.status(500).json({ message: 'Error getting products', error });
@@ -13,8 +13,7 @@ exports.getProducts = async (req, res) => {
 // Create a new product
 exports.createProduct = async (req, res) => {
   try {
-    const newProduct = new Product(req.body);
-    await newProduct.save();
+    const newProduct = await Product.create(req.body);
     res.status(201).json(newProduct);
   } catch (error) {
     res.status(500).json({ message: 'Error creating product', error });
@@ -39,28 +38,19 @@ exports.getProduct = async (req, res, next) => {
 
 // Update a product
 exports.updateProduct = async (req, res) => {
-  if (req.body.name != null) {
-    res.product.name = req.body.name;
-  }
-  if (req.body.price != null) {
-    res.product.price = req.body.price;
-  }
-  if (req.body.description != null) {
-    res.product.description = req.body.description;
-  }
-
   try {
-    const updatedProduct = await res.product.save();
+    const updatedProduct = await Product.update(req.params.id, req.body);
     res.json(updatedProduct);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
 };
 
+
 // Delete a product
 exports.deleteProduct = async (req, res) => {
   try {
-    await res.product.remove();
+    await Product.delete(req.params.id);
     res.json({ message: 'Deleted Product' });
   } catch (err) {
     res.status(500).json({ message: err.message });

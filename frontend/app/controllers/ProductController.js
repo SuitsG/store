@@ -1,19 +1,57 @@
-const Product = require('../models/Product');
+import ProductModel from '../models/Product.js';
 
 class ProductController {
     constructor() {
-        this.products = [];
+        this.productModel = new ProductModel();
     }
 
-    addProduct(product) {
-        this.products.push(product);
+    async fetchProducts(req, res) {
+        try {
+            await this.productModel.fetchProducts();
+            res.status(200).json(this.productModel.products);
+        } catch (error) {
+            res.status(500).json({ error: 'Error fetching products' });
+        }
     }
 
-    getProductById(id) {
-        return this.products.find(product => product.id === id);
+    async addProduct(req, res) {
+        try {
+            const product = req.body;
+            await this.productModel.addProduct(product);
+            res.status(201).json(product);
+        } catch (error) {
+            res.status(500).json({ error: 'Error adding product' });
+        }
     }
 
-    // ...otros métodos necesarios...
+    async getProducts(req, res) {
+        try {
+            res.status(200).json(this.productModel.products);
+        } catch (error) {
+            res.status(500).json({ error: 'Error getting products' });
+        }
+    }
+
+    async updateProduct(req, res) {
+        try {
+            const { id } = req.params;
+            const updatedProduct = req.body;
+            await this.productModel.updateProduct(id, updatedProduct);
+            res.status(200).json(updatedProduct);
+        } catch (error) {
+            res.status(500).json({ error: 'Error updating product' });
+        }
+    }
+
+    async deleteProduct(req, res) {
+        try {
+            const { id } = req.params;
+            await this.productModel.deleteProduct(id);
+            res.status(204).send();
+        } catch (error) {
+            res.status(500).json({ error: 'Error deleting product' });
+        }
+    }
 }
 
-module.exports = ProductController;
+export default ProductController;
