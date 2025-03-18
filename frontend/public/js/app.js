@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function displayProducts() {
   try {
-    const response = await fetch('/products'); // Asegúrate de que esta ruta coincida con la ruta en tu backend
+    const response = await fetch('http://localhost:3000/products');
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -34,12 +34,10 @@ async function displayProducts() {
 
       productElement.innerHTML = `
         <img src="${product.images[0]}" alt="${product.name}">
+        <div class="product-info">
         <h3>${product.name}</h3>
-        <p>${product.description}</p>
         <p>Precio: $${product.price}</p>
-        <p>Tallas: ${product.size}</p>
-        <p>Colores: ${product.colors.join(', ')}</p>
-        <button>Comprar</button>
+        </div>
       `;
 
       productsContainer.appendChild(productElement);

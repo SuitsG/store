@@ -9,91 +9,191 @@
     --color-blue: #0073e6;
 }
 
-body {
-    font-family: var(--font-reboto);
-    background: var(--color-gray);
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-rebotoSerif);
+    background-color: var(--color-gray);
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+}
+
+/* Header */
+
+.header {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: 1rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: var(--color-black);
+    margin: 0;
+}
+
+
+
+/* Main */
+.main{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 3rem;
 }
 
-h1 {
-    font-family: var(--font-rebotoSerif);
-    font-size: 2.5rem;
-    margin: 1rem 0;
-}
-
-form {
-    background: var(--color-white);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.main table {
     width: 100%;
-    max-width: 600px;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="number"],
-textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid var(--color-black);
-    border-radius: 0.25rem;
-}
-
-button {
-    background: var(--color-blue);
-    color: var(--color-white);
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:hover {
-    background: darken(var(--color-blue), 10%);
-}
-
-table {
-    width: 100%;
-    max-width: 1000px;
-    margin-top: 2rem;
     border-collapse: collapse;
-    background: var(--color-white);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    background-color: var(--color-gray);
 }
 
-th, td {
-    padding: 1rem;
+.main th, .main td {
     border: 1px solid var(--color-black);
+    padding: 0.75rem;
     text-align: left;
 }
 
-th {
-    background: var(--color-blue);
+.main th {
+    background-color: var(--color-blue);
     color: var(--color-white);
+    font-weight: bold;
+}
+.main td button {
+    margin: 0.5rem;
+    padding: 0.5rem 0.5rem;
 }
 
-td {
-    background: var(--color-gray);
+.main tr:nth-child(even) {
+    background-color: var(--color-white);
 }
 
-.actions {
+
+/* Dialog */
+.main dialog {
+    width: 100%;
+    max-width: 550px;
+    padding: 1rem;
+    background-color: var(--color-gray);
+    border: 1px solid var(--color-black);
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.main dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.main form {
+    width: 100%;
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+/* setion products */
+.products {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1rem;
+}
+
+
+
+/* form group div de los inputs*/
+.form-group{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 0.5rem;
 }
 
-.actions button {
-    padding: 0.5rem;
-    font-size: 0.875rem;
+.form-group div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+.form-group div input {
+    width: 80%;
+    height: 10px;
+    padding: 0.8rem;
+    border: 1px solid var(--color-black);
+    border-radius: 5px;
+}
+
+.buttons{
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+}
+
+/* Button add */
+/* From Uiverse.io by yaasiinaxmed */
+.addProduct {
+    --color: #0077ff;
+    font-family: inherit;
+    display: inline-block;
+    width: 6em;
+    height: 2.6em;
+    line-height: 2.5em;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 17px;
+    z-index: 1;
+    color: var(--color);
+    border: 2px solid var(--color);
+    border-radius: 6px;
+    position: relative;
+}
+
+.addProduct::before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.addProduct:hover {
+    color: white;
+}
+
+.addProduct:before {
+    top: 100%;
+    left: 100%;
+    transition: 0.3s all;
+}
+
+.addProduct:hover::before {
+    top: -30px;
+    left: -30px;
+}
+
+/* Footer */
+
+.footer {
+    background: linear-gradient(to top, #0f2027, #203a43, #2c5364);
+    color: var(--color-white);
+    padding: 2rem;
+    text-align: center;
 }

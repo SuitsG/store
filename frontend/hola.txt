@@ -1,0 +1,16 @@
+db.products.insertOne({
+  name: "Jean azul intenso",
+  price: 100,
+  description: "Muy comodo",
+  size: "M",
+  color: "azul",
+  images: ["https://cdn.koaj.co/190804-thickbox_default/pantalon-jean-90s-hombre-bota-ancha.jpg"],
+  amount: 50,
+  productCategory: ObjectId("67d7128a600287bfd451e944"),
+  gender: "Masculino"
+})
+
+
+db.productcategories.insertOne({
+  name: "Pantalones",
+})
