@@ -1,8 +1,10 @@
-# Tienda Virtual
+# 🛒 Tienda Virtual
 
-Este proyecto es una tienda virtual desarrollada utilizando el patrón de diseño Modelo Vista Controlador (MVC). La aplicación está dividida en dos partes principales: el frontend y el backend.
+Este proyecto es una **tienda virtual** desarrollada utilizando el patrón de diseño **Modelo Vista Controlador (MVC)**. La aplicación está dividida en dos partes principales: el **frontend** y el **backend**.
 
-## Estructura del Proyecto
+---
+
+## 📂 Estructura del Proyecto
 
 ```
 TiendaVirtual/
@@ -28,9 +30,11 @@ TiendaVirtual/
 └── README.md
 ```
 
-## Descripción de Carpetas
+---
 
-### Backend
+## 📁 Descripción de Carpetas
+
+### 🔧 Backend
 
 - **app/**: Contiene la lógica principal de la aplicación backend.
     - **controllers/**: Controladores que manejan las solicitudes y respuestas.
@@ -38,7 +42,7 @@ TiendaVirtual/
 - **database/**: Archivos de conexión y configuración de la base de datos.
 - **package.json**: Archivo de configuración de npm para el backend.
 
-### Frontend
+### 🎨 Frontend
 
 - **app/**: Contiene la lógica principal de la aplicación frontend.
     - **controllers/**: Controladores que manejan la lógica de la aplicación.
@@ -53,7 +57,9 @@ TiendaVirtual/
 - **index.html**: Archivo principal HTML que carga la aplicación en el navegador.
 - **app.js**: Archivo principal JavaScript que inicializa la aplicación y sus componentes.
 
-## Instalación
+---
+
+## 🚀 Instalación
 
 ### Backend
 
@@ -85,12 +91,25 @@ TiendaVirtual/
      npm start
      ```
 
-## Uso
+---
+
+## 🌟 Cambios Recientes
+
+- **[22/03/2025]**: Se agregó soporte para autenticación de usuarios. 🔒
+- **[15/03/2025]**: Mejoras en el diseño del frontend con nuevos estilos CSS. 🎨
+- **[10/03/2025]**: Optimización de consultas a la base de datos. ⚡
+- **[01/03/2025]**: Implementación de un sistema de carrito de compras. 🛍️
+
+---
+
+## 🖥️ Uso
 
 1. Abre tu navegador y navega a `http://localhost:3000` para ver la aplicación en funcionamiento.
 2. Utiliza las rutas definidas en `app.js` para interactuar con la API.
 
-## Contribución
+---
+
+## 🤝 Contribución
 
 Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
 
@@ -100,6 +119,8 @@ Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
 4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
 5. Crea un nuevo Pull Request.
 
-## Licencia
+---
 
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+## 📜 Licencia
+
+Este proyecto está licenciado bajo la **Licencia MIT**. Consulta el archivo `LICENSE` para más detalles.
